@@ -104,6 +104,14 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Webdog.Web.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\OneDrive\Projecten\AchterDeBlauweDeur\SRC 2020\Webdog.Web.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Webdog.Web.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\OneDrive\Projecten\AchterDeBlauweDeur\SRC 2020\Webdog.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -318,16 +326,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OneDrive\Projecten\WebDog\CMS 2017\Webdog.Web.Models\Webdog.Web.Models.csproj">
-      <Project>{00ea610e-ee7f-4364-bf22-a7cc09d2562f}</Project>
-      <Name>Webdog.Web.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\OneDrive\Projecten\WebDog\CMS 2017\Webdog.Web.Mvc\Webdog.Web.Mvc.csproj">
-      <Project>{f6e390fa-6cc0-4d97-986d-ac0ce58c3753}</Project>
-      <Name>Webdog.Web.Mvc</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
