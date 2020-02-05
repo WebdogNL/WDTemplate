@@ -332,11 +332,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\CMS 2017\Webdog.Web.Models\Webdog.Web.Models.csproj">
+    <ProjectReference Include="..\..\..\..\OneDrive\Projecten\WebDog\CMS 2017\Webdog.Web.Models\Webdog.Web.Models.csproj">
       <Project>{00ea610e-ee7f-4364-bf22-a7cc09d2562f}</Project>
       <Name>Webdog.Web.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\CMS 2017\Webdog.Web.Mvc\Webdog.Web.Mvc.csproj">
+    <ProjectReference Include="..\..\..\..\OneDrive\Projecten\WebDog\CMS 2017\Webdog.Web.Mvc\Webdog.Web.Mvc.csproj">
       <Project>{f6e390fa-6cc0-4d97-986d-ac0ce58c3753}</Project>
       <Name>Webdog.Web.Mvc</Name>
     </ProjectReference>
