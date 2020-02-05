@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.SEOTitle - by Webdog</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- For Google -->
+    <meta name="description" content="@ViewBag.SEODescription" />
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <meta name="author" content="Webdog / Yell & Yonkers / fra-pant" />
+    <meta name="copyright" content="Klant @DateTime.Now.Year" />
+
+    <!-- For Twitter -->
+    <meta name="twitter:card" content="content" />
+    <meta name="twitter:title" content="@ViewBag.SEOTitle" />
+    <meta name="twitter:description" content="@ViewBag.SEODescription" />
+    <meta name="twitter:image" content="@ViewBag.PageImage" />
+
+    <!-- og -->
+    <meta property="og:title" content="@ViewBag.SEOTitle" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="@Request.Url.AbsoluteUri" />
+    <meta property="og:image" content="@ViewBag.PageImage" />
+    <meta property="og:description" content="@ViewBag.SEODescription" />
+    <meta property="og:locale" content="nl_NL" />
+    <meta property="og:site_name" content="Website Klant Naam" />
+
+    @RenderSection("header", required: false)
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-@(ViewBag.MenuColor ?? "light") bg-@(ViewBag.MenuColor ?? "light") fixed-top">
+        <div class="container">
+            @Html.ActionLink("Webdog", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : null)">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">@Html.ActionLink("Logoff", "Logoff", "Login", null, new { @class = "nav-link" })</li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">@Html.ActionLink("Login", "Index", "Login", null, new { @class = "nav-link" })</li>
+                    }
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            @if (((WDAccount)(ViewBag._Account) ?? new WDAccount()).Maxrole > 0)
+            {
+                using (Html.BeginForm("Update", "Function"))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("source", Request.RawUrl)
+                    <p>
+                        &copy; <a href="javascript:void(0)" onclick="$(this).closest('form').submit(); return false;" style="color:inherit;" rel="nofollow">@DateTime.Now.Year</a> - Webdog | fra-pant | Yell &amp; Yonkers
+                    </p>
+                }
+            }
+            else
+            {
+                <p>
+                    &copy; <a href="/login" style="color:inherit;" rel="nofollow">@DateTime.Now.Year</a> - Webdog | fra-pant | Yell &amp; Yonkers
+                </p>
+            }
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

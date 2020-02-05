@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@section header
+{
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("recaptcha-form").submit();
+        }
+    </script>
+    <style>
+        .validation-summary-valid {
+            display: none;
+        }
+
+        .validation-summary-errors {
+            display: block !important;
+        }
+
+        div[class*=validation-summary-] ul {
+            list-style: none;
+            padding: 0;
+        }
+    </style>
+}
+
+<div class="jumbotron">
+    <h2>Login</h2>
+
+    @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @id = "recaptcha-form" }))
+    {
+        @Html.AntiForgeryToken()
+        <p class="lead">
+            @Html.ValidationSummary(false, "", new { @class = "alert alert-info" })
+        </p>
+
+        <div class="form-group row">
+            <div class="col-12 col-lg-6">
+                <label for="email">Username</label>
+                @Html.TextBox("username", null, new { @class = "form-control", @placeholder = "Username" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-12 col-lg-6">
+                <label for="email">Password</label>
+                @Html.TextBox("password", null, new { @class = "form-control", @placeholder = "Password", @type = "password" })
+            </div>
+        </div>
+        <p>
+            @if (ViewBag.WellKnown ?? false)
+            {
+                <button class="btn btn-lg btn-primary" type="submit">Login</button>
+            }
+            else
+            {
+                <button class="g-recaptcha btn btn-lg btn-primary"
+                        data-sitekey="6LfmDoMUAAAAANHYJnb-rQNsaq0NhTMEq69QgTRA"
+                        data-callback="onSubmit">
+                    Login
+                </button>
+            }
+        </p>
+    }
+</div>
