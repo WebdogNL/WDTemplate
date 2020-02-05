@@ -10,6 +10,7 @@ namespace WDTemplate.Controllers
     public class FunctionController : Controller
     {
         // GET: Function
+        // test commit
         public ActionResult Index()
         {
             return View();
