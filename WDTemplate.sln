@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webdog.Web.Models", "..\..\CMS 2017\Webdog.Web.Models\Webdog.Web.Models.csproj", "{00EA610E-EE7F-4364-BF22-A7CC09D2562F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webdog.Web.Mvc", "..\..\CMS 2017\Webdog.Web.Mvc\Webdog.Web.Mvc.csproj", "{F6E390FA-6CC0-4D97-986D-AC0CE58C3753}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WDTemplate", "WDTemplate\WDTemplate.csproj", "{2C0EB37D-56FC-4790-8B17-5D02B39050C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webdog.Web.Models", "..\..\..\OneDrive\Projecten\WebDog\CMS 2017\Webdog.Web.Models\Webdog.Web.Models.csproj", "{00EA610E-EE7F-4364-BF22-A7CC09D2562F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webdog.Web.Mvc", "..\..\..\OneDrive\Projecten\WebDog\CMS 2017\Webdog.Web.Mvc\Webdog.Web.Mvc.csproj", "{F6E390FA-6CC0-4D97-986D-AC0CE58C3753}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +15,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C0EB37D-56FC-4790-8B17-5D02B39050C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0EB37D-56FC-4790-8B17-5D02B39050C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0EB37D-56FC-4790-8B17-5D02B39050C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0EB37D-56FC-4790-8B17-5D02B39050C1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{00EA610E-EE7F-4364-BF22-A7CC09D2562F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{00EA610E-EE7F-4364-BF22-A7CC09D2562F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00EA610E-EE7F-4364-BF22-A7CC09D2562F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,10 +27,6 @@ Global
 		{F6E390FA-6CC0-4D97-986D-AC0CE58C3753}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6E390FA-6CC0-4D97-986D-AC0CE58C3753}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6E390FA-6CC0-4D97-986D-AC0CE58C3753}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C0EB37D-56FC-4790-8B17-5D02B39050C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C0EB37D-56FC-4790-8B17-5D02B39050C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C0EB37D-56FC-4790-8B17-5D02B39050C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C0EB37D-56FC-4790-8B17-5D02B39050C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
